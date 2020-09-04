@@ -183,7 +183,8 @@
   }
 
   .info {
-    width: fit-content;
+    width: fit-content !important;
+    background: #0000004a;
   }
 }
 
