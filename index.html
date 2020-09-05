@@ -8,12 +8,18 @@
     <div class="content" id="content">
       <div class="header">
         <div class="logo">< ALex_Case /></div>
+        <ul class="menu-desctop">
+          <li><a href="#info">About Me</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#works">My Works</a></li>
+          <li><a href="#contact">Contact me</a></li>
+        </ul>
         <div
           class="menu"
           onclick="triggerClass('content', 'triggered'),triggerClass('navigation', 'triggered')"
         ></div>
       </div>
-      <div class="info">
+      <div class="info" id="info">
         <div class="title">
           Hi, my name is <strong>Alexander Shugaev</strong>
         </div>
@@ -22,6 +28,21 @@
           realized one important thing <br />
           <strong>- it was not necessary. </strong>
         </div>
+      </div>
+      <!-- <div class="works" id="works"></div> -->
+      <div class="technologies" id="technologies">
+        <div class="tech-title">Technologies I Use</div>
+        <div class="slideshow-imgs">
+          <div class="container-slider container-imgs" id="slider-img"></div>
+        </div>
+        <div class="slideshow-names">
+          <div class="container-slider container-names" id="slider-names"></div>
+        </div>
+      </div>
+      <div class="contact" id="contact">
+        <button class="btn-contact" onclick="sendEmail('ALA ULU')">
+          contact me
+        </button>
       </div>
       <div class="share-buttons">
         <a href="https://www.facebook.com/SUGARevAlexander" target="_blank">
@@ -44,6 +65,7 @@
       </div>
     </div>
     <div class="navigation" id="navigation"></div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

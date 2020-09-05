@@ -2,12 +2,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .content {
   background-image: url(assets/background.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   min-height: 100%;
   transition: 1s cubic-bezier(0.33, 1.01, 0.04, 0.99);
   display: flex;
@@ -28,12 +30,12 @@
     animation: smooth-appearance 1.5s ease, up-to-down 1s ease;
     .logo {
       font-weight: bold;
-      font-family: "Poppins", sans-serif;
       color: #ffffff;
       font-size: 25px;
       animation: smooth-appearance 0.1s ease, down-to-up 1s ease;
     }
     .menu {
+      display: none;
       padding: 1px;
       position: relative;
       width: 30px;
@@ -60,14 +62,30 @@
       background: #ffffff;
       transition: 0.3s ease;
     }
+    .menu-desctop {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      li {
+        margin-right: 20px;
+        a {
+          text-decoration: none;
+          color: white;
+          transition: 0.1s ease;
+        }
+        a:hover {
+          color: #18fbee;
+        }
+      }
+    }
   }
   .info {
     font-family: "Poppins", sans-serif;
-    padding-top: 60px;
-    padding: 100px 30px 0;
+    padding: 50px 30px 0;
     width: 42%;
     animation: smooth-appearance 1s ease;
-    padding-bottom: 75px;
+    height: calc(100vh - 110px);
+    margin-top: 60px;
     .title {
       font-size: 22px;
       font-weight: 600;
@@ -85,6 +103,71 @@
         font-size: 24px;
         animation: smooth-appearance-azure 3s ease;
       }
+    }
+  }
+  .works {
+    background: #272727;
+    height: 100vh;
+  }
+  .technologies {
+    background: #272727;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .tech-title {
+      color: white;
+      font-size: 45px;
+      text-align: center;
+      margin-top: 20vh;
+    }
+    .slideshow-imgs {
+      width: 100vw;
+      background: #7575751c;
+      padding: 30px;
+      height: 20vh;
+    }
+    .slideshow-names {
+      margin-bottom: 20vh;
+      width: 100vw;
+      height: 45px;
+    }
+
+    .container-imgs {
+      position: relative;
+      animation: slide-left-to-right 15s linear infinite;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container-names {
+      animation: slide-right-to-left 15s linear infinite;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 200vw;
+    }
+
+    .container-slider img {
+      height: 20vh;
+      margin: 0 70px;
+    }
+    .container-slider:hover {
+      animation-play-state: paused;
+    }
+  }
+  .contact {
+    background: #272727;
+    height: calc(100vh - 60px);
+    .btn-contact {
+      height: 45px;
+      width: 160px;
+      background: blueviolet;
     }
   }
   .share-buttons {
@@ -176,21 +259,78 @@
   }
 }
 
-@media (max-width: 767px) {
+@keyframes slide-left-to-right {
+  0% {
+    transform: translateX(-160%);
+  }
+  100% {
+    transform: translateX(160%);
+  }
+}
+
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-left-to-right-mob {
+  0% {
+    transform: translateX(-350%);
+  }
+  100% {
+    transform: translateX(350%);
+  }
+}
+
+@keyframes slide-right-to-left-mob {
+  0% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media (max-width: 656px) {
+  .content {
+    background-size: auto !important;
+  }
   .triggered {
-    transform: translate(-260px, 0px);
+    transform: translate(-80vw, 0px);
   }
   .navigation {
     background: #4d4d4d;
     position: fixed;
     top: 0;
-    right: -260px;
-    width: 260px;
+    right: -80vw;
+    width: 80vw;
     height: 100vh;
     transition: 1s cubic-bezier(0.33, 1.01, 0.04, 0.99);
   }
   .info {
     width: fit-content !important;
     background: #0000004a;
+  }
+  .menu-desctop {
+    display: none !important;
+  }
+  .menu {
+    display: block !important;
+  }
+  .container-imgs {
+    animation: slide-left-to-right-mob 15s linear infinite !important;
+  }
+  .container-names {
+    animation: slide-right-to-left-mob 15s linear infinite !important;
+    font-size: 18px !important;
+  }
+  .tech-title {
+    color: white;
+    font-size: 30px !important;
+    text-align: center;
+    margin-top: 20vh;
   }
 }
