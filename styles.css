@@ -301,6 +301,7 @@
 
 #spinner {
   display: none;
+  place-items: center;
   position: absolute;
   top: 0;
   height: 100vh;
@@ -312,8 +313,6 @@
 #spinner img {
   height: 58px;
   position: absolute;
-  top: 50%;
-  left: 43%;
 }
 
 @keyframes smooth-appearance {

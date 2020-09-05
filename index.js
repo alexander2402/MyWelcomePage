@@ -7,8 +7,6 @@ function closeNavMobile() {
   navBar = document.getElementById("navigation");
   content = document.getElementById("content");
   const _classList = content.classList;
-  console.log(_classList);
-  console.log(_classList.contains("triggered"));
   _classList.contains("triggered")
     ? (content.classList.remove("triggered"),
       navBar.classList.remove("triggered"))
@@ -20,7 +18,7 @@ function sendEmail() {
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
   name && email && message
-    ? ((document.getElementById("spinner").style.display = "block"),
+    ? ((document.getElementById("spinner").style.display = "grid"),
       Email.send({
         SecureToken: "fd372e32-fa54-4543-9990-2f30cb764c2a",
         To: "alexwinner2402@gmail.com",
