@@ -7,9 +7,7 @@
 }
 
 .content {
-  background-image: url(assets/background.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-color: #000000;
   min-height: 100%;
   transition: 1s cubic-bezier(0.33, 1.01, 0.04, 0.99);
   display: flex;
@@ -27,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  background-color: #00000045;
+  background-color: #000000;
   animation: smooth-appearance 1.5s ease, up-to-down 1s ease;
 }
 .content .header .logo {
@@ -81,27 +79,33 @@
   color: #18fbee;
 }
 .content .info {
-  font-family: "Poppins", sans-serif;
-  padding: 50px 30px 0;
-  width: 42%;
+  background-image: url(assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 50px 0 0;
+  width: auto;
   animation: smooth-appearance 1s ease;
-  height: calc(100vh - 110px);
   margin-top: 60px;
 }
-.content .info .title {
+.content .info .about-me {
+  padding: 0 0 0 60px;
+  width: 44%;
+}
+.content .info .about-me .title {
   font-size: 22px;
   font-weight: 600;
   color: #242424;
   animation: smooth-appearance 1s ease;
 }
-.content .info .title strong {
+.content .info .about-me .title strong {
   color: #00fff2;
   font-size: 24px;
 }
-.content .info .description {
+.content .info .about-me .description {
   font-size: 19px;
 }
-.content .info .description strong {
+.content .info .about-me .description strong {
   color: #00fff2;
   font-size: 24px;
   animation: smooth-appearance-azure 3s ease;
@@ -174,14 +178,19 @@
   width: 100%;
   min-width: 250px;
   justify-content: center;
+  filter: invert(1);
   background-color: #ffffff0d;
 }
 .content .share-buttons .share-btn {
   cursor: pointer;
   margin: 7px 20px;
+  transition: 0.1s ease;
 }
 .content .share-buttons .share-btn img {
   height: 45px;
+}
+.content .share-buttons .share-btn:hover {
+  margin-top: 3px !important;
 }
 
 .triggered .header .menu:before {
@@ -298,9 +307,9 @@
     transition: 1s cubic-bezier(0.33, 1.01, 0.04, 0.99);
   }
 
-  .info {
+  .about-me {
     width: fit-content !important;
-    background: #0000004a;
+    padding: 0 0 0 30px !important;
   }
 
   .menu-desctop {
