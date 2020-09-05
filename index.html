@@ -42,9 +42,29 @@
         </div>
       </div>
       <div class="contact" id="contact">
-        <button class="btn-contact" onclick="sendEmail('ALA ULU')">
-          contact me
-        </button>
+        <div class="contact-title">Fill form and feel free to contact me</div>
+        <form>
+          <div class="inputBox">
+            <input type="text" required="required" id="name" />
+            <span>Your Full Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" id="email" />
+            <span>Your Email</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" required="required" id="message" />
+            <span>Your message...</span>
+          </div>
+          <div class="inputBox">
+            <div id="error-message"></div>
+            <input type="submit" value="SEND!" onclick="sendEmail()" />
+          </div>
+        </form>
+        <div class="media-recommend">
+          Also check my social media
+          <img src="assets/rounded-arror.png" alt="" />
+        </div>
       </div>
       <div class="share-buttons">
         <a href="https://www.facebook.com/SUGARevAlexander" target="_blank">

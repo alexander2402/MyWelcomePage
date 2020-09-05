@@ -166,12 +166,74 @@
     }
   }
   .contact {
-    background: #272727;
+    background: #7d7d7d8c;
     height: calc(100vh - 60px);
-    .btn-contact {
-      height: 45px;
-      width: 160px;
-      background: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    .contact-title {
+      font-size: 28px;
+      color: #ffffff;
+      // font-weight: bold;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .inputBox {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 20px 0px;
+        input {
+          width: 300px;
+          height: 40px;
+        }
+        span {
+          position: absolute;
+          left: 10px;
+          top: 25%;
+          transition: 0.2s ease;
+        }
+        input:focus ~ span,
+        input:valid ~ span {
+          transform: translate3d(-10px, -35px, 0);
+          color: cyan;
+          font-size: 15px;
+        }
+        #error-message {
+          position: absolute;
+          width: 100%;
+          top: -25px;
+          color: #ffa600;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 800;
+        }
+      }
+      .inputBox:nth-last-child(1) {
+        margin-top: 40px;
+        input {
+          background: #2debff;
+          border: none;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+    }
+    .media-recommend {
+      color: white;
+      font-size: 18px;
+      position: relative;
+      img {
+        height: 74px;
+        position: absolute;
+        top: 12px;
+        filter: invert(1);
+      }
     }
   }
   .share-buttons {
@@ -341,5 +403,13 @@
     font-size: 30px !important;
     text-align: center;
     margin-top: 20vh;
+  }
+  .media-recommend {
+    color: white;
+    font-size: 15px !important;
+    position: relative;
+    img {
+      height: 57px !important;
+    }
   }
 }

@@ -3,16 +3,22 @@ function triggerClass(id, cssClass) {
   elem.classList.toggle(cssClass);
 }
 
-function sendEmail(text) {
-  Email.send({
-    SecureToken: "fd372e32-fa54-4543-9990-2f30cb764c2a",
-    To: "alexwinner2402@gmail.com",
-    From: "alexandershugaev2402@gmail.com",
-    Subject: "This is the subject",
-    Body: "text",
-  }).then((message) => {
-    alert(message);
-  });
+function sendEmail() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  name && email && message
+    ? Email.send({
+        SecureToken: "fd372e32-fa54-4543-9990-2f30cb764c2a",
+        To: "alexwinner2402@gmail.com",
+        From: email,
+        Subject: "Message from My Welcome Page!",
+        Body: `${name} sent a message: ${message}`,
+      }).then((message) => {
+        alert("Message Has Been Sent Successfuly", message);
+      })
+    : (document.getElementById("error-message").innerText =
+        "All fields are required");
 }
 
 window.addEventListener("load", startSlider);

@@ -164,13 +164,74 @@
   animation-play-state: paused;
 }
 .content .contact {
-  background: #272727;
+  background: #7d7d7d8c;
   height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 50px;
 }
-.content .contact .btn-contact {
-  height: 45px;
-  width: 160px;
-  background: blueviolet;
+.content .contact .contact-title {
+  font-size: 28px;
+  color: #ffffff;
+}
+.content .contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content .contact form .inputBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 20px 0px;
+}
+.content .contact form .inputBox input {
+  width: 300px;
+  height: 40px;
+}
+.content .contact form .inputBox span {
+  position: absolute;
+  left: 10px;
+  top: 25%;
+  transition: 0.2s ease;
+}
+.content .contact form .inputBox input:focus ~ span,
+.content .contact form .inputBox input:valid ~ span {
+  transform: translate3d(-10px, -35px, 0);
+  color: cyan;
+  font-size: 15px;
+}
+.content .contact form .inputBox #error-message {
+  position: absolute;
+  width: 100%;
+  top: -25px;
+  color: #ffa600;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+.content .contact form .inputBox:nth-last-child(1) {
+  margin-top: 40px;
+}
+.content .contact form .inputBox:nth-last-child(1) input {
+  background: #2debff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+.content .contact .media-recommend {
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+.content .contact .media-recommend img {
+  height: 74px;
+  position: absolute;
+  top: 12px;
+  filter: invert(1);
 }
 .content .share-buttons {
   display: flex;
@@ -334,6 +395,15 @@
     font-size: 30px !important;
     text-align: center;
     margin-top: 20vh;
+  }
+
+  .media-recommend {
+    color: white;
+    font-size: 15px !important;
+    position: relative;
+  }
+  .media-recommend img {
+    height: 57px !important;
   }
 }
 
