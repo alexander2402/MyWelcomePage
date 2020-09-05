@@ -380,6 +380,18 @@
     width: 80vw;
     height: 100vh;
     transition: 1s cubic-bezier(0.33, 1.01, 0.04, 0.99);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .nav-item {
+      margin: 20px 0;
+      a {
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+      }
+    }
   }
   .about-me {
     width: fit-content !important;
